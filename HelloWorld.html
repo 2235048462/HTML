@@ -1,0 +1,608 @@
+<!-- 01 <html>
+	<body>
+		<p>
+			Hello HTML
+		</p>
+	</body>
+</html> -->
+
+<!-- 02 <head>
+	<meta http-equiv="content-type" content="text/html" ; charset="uft-8">
+</head>
+<p>中文</p> -->
+
+<!-- HTML是由一套标记标签组成;
+标签由开始标签和结束标签组成;
+标签之间的文本叫做内容. -->
+<!-- 03 <h1>大标题</h1>
+<h2>中标题</h2>
+<h3>小标题</h3> -->
+
+<!-- 元素是指从开始标签到结束标签之间所有代码
+ 一个完整的HTML文件,至少包含html元素,body元素,以及里面的内容 -->
+<!-- 04 <html>
+	<body>
+		<h1>标题</h1>
+	</body>
+</html> -->
+
+<!-- 05 <h1>标题1</h1>
+<br />
+<br />
+<br />
+<h1>标题2前面有3个换行</h1>
+<p>这是一条水平线,有渲染效果,但没有文本内容</p>
+<hr /> -->
+
+<!-- 属性用来修饰标签,属性值用""引起来 -->
+<!-- 06 <h1>未设置居中的标题</h1> -->
+<!-- align属性用于对齐 -->
+<!-- <h1 align="center">标题居中</h1> -->
+
+<!-- 阶段性练习1 -->
+<!-- <h1>-<h6>标题自动粗体,内容大写,自带换行 -->
+<!-- <p>标签表示段落,是paragraph缩写,自带换行效果 -->
+<!-- <b>,<strong>都可以用来实现粗体效果,b是bold缩写,推荐使用<strong> -->
+<!-- <i>,<em>都可以表示斜体效果,i是italic缩写,em是Emphasized缩写 -->
+<!-- <pre>表示预格式,通常网页上显示代码时使用 -->
+<!-- <del>是删除标签 -->
+<!-- <ins>是下划线标签 -->
+<!-- 07 <html>
+	<body>
+		<h1>英雄联盟 (电子竞技类游戏)</h1>
+		<p><strong>《英雄联盟》</strong>(简称LOL)是由美国<em>Riot Games</em>开发，中国大陆地区由腾讯游戏运营的网络游戏。</p>
+		<p><strong>《英雄联盟》</strong>除了即时战略,团队作战外，还拥有一百多位特色各异的英雄，丰富的地图及玩法，
+			自动匹配的战网平台，包括天赋树，召唤师系统符文等元素。[<ins>1</ins>]</p>
+		<p>2016年1月，根据官方数据显示，LOL全球最高同时在线已突破<del>750</del> 900万，全球日活跃高达2700万，全球月活跃已达6700万，
+			注册用户亿计，LOL已经成为当今世界最具人气和网络影响力的网络游戏之一。[<ins>2</ins>]</p>
+	</body>
+</html> -->
+
+<!-- 阶段性练习2 -->
+<!-- <img>图像标签,属性src指定图像的路径,本地文件放在同一目录(该html所在目录)下,
+	 可直接使用文件名,也可使用图片所在的绝对路径并加file:// -->
+<!-- 属性alt内容,在图片存在时不显示,图片不存在时显示 -->
+<!-- 08 <html>
+	<body>
+		<h2><strong>英雄技能</strong></h2>
+		<table border="1" width="600px">
+			<tr bgcolor="darkgray">
+				<td width="20%" align="left">
+					<strong>技能名</strong>
+				</td>
+				<td width="8%" align="left">
+					<strong>触发</strong>
+				</td>
+				<td width="16%" align="left">
+					<strong>技能属性</strong>
+				</td>
+				<td width="46%" align="left">
+					<strong>技能效果</strong>
+				</td>
+				<td width="10%" align="left">
+					<strong>图标</strong>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>坚韧</strong>
+				</td>
+				<td>
+					<strong>被动</strong>
+				</td>
+				<td colspan="2" align="left">
+					<p>
+						<font size="-1">如果盖伦近期（10秒内）没有受到伤害或者被敌方技能命中，那么他会每秒回复0.4%的最大生命值。
+							小兵的伤害不会中断坚韧效果。</font>
+					</p>
+				</td>
+				<td>
+					<img src="images/skill1.png" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>致命打击</strong>
+				</td>
+				<td>
+					<strong>Q</strong>
+				</td>
+				<td>
+					<p>
+						<font size="-1">冷却时间:8</font>
+					</p>
+				</td>
+				<td>
+					<p>
+						<font size="-1">盖伦移除身上的所有减速效果，并获得30%移动速度加成，持续1.5/2/2.5/3/3.5秒。<br />
+							在接下来的4.5秒内，他的下次普通攻击会造成30/55/80/105/130(+1.4)物理伤害，并沉默目标1.5秒。</font>
+					</p>
+				</td>
+				<td>
+					<img src="images/skill2.png" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>勇气</strong>
+				</td>
+				<td>
+					<strong>W</strong>
+				</td>
+				<td>
+					<p>
+						<font size="-1">冷却时间：24/23/22/21/20</font>
+					</p>
+				</td>
+				<td>
+					<p>
+						<font size="-1"><strong>被动:</strong>击杀一个单位会永久提供0.25点护甲和魔法抗性加成，最大值：30<br />
+							<strong>主动:</strong>盖伦获得一个持续2/3/4/5/6秒的防御护盾，减少即将到来的30%伤害。</font>
+					</p>
+				</td>
+				<td>
+					<img src="images/skill3.png" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>审判</strong>
+				</td>
+				<td>
+					<strong>E</strong>
+				</td>
+				<td>
+					<p>
+						<font size="-1">冷却时间：9秒</font>
+					</p>
+				</td>
+				<td>
+					<p>
+						<font size="-1">盖伦快速地旋舞大剑，持续3秒，在持续期间对周围敌人总共造成物理伤害——14/18/22/26/30
+							加上他总攻击力的34/35/36/37/38%。<br />
+							【审判】会在攻击单个敌人时造成33%额外伤害。<br />
+							取消【审判】会返还相当于剩余持续时长的冷却时间。<br />
+							审判可以暴击，并造成额外伤害。</font>
+					</p>
+				</td>
+				<td>
+					<img src="images/skill4.png" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>德玛西亚正义</strong>
+				</td>
+				<td>
+					<strong>R</strong>
+				</td>
+				<td>
+					<p>
+						<font size="-1">冷却时间：120/100/80</font>
+					</p>
+				</td>
+				<td>
+					<p>
+						<font size="-1"><strong>被动:</strong>最近获得最多击杀数的敌人会成为大反派。盖伦的【审判】的每一跳和普攻都会对大反派造成额外真实伤害，
+							伤害值为大反派1%的最大生命值。<br />
+							<strong>主动:</strong>盖伦召唤德玛西亚之力，试图斩杀一名敌方英雄，目标损失的生命越多，则此技能造成的伤害越高。
+							造成175/350/525魔法伤害加上目标已损失生命值的28/33/40%。对大反派造成真实伤害。 </font>
+					</p>
+				</td>
+				<td>
+					<img src="images/skill5.png" />
+				</td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html> -->
+
+<!-- <a>标签用来显示超链,完整元素是<a href="跳转到的页面地址">超链显示文本</a> -->
+<!-- 新增属性target,在新的页面打开超链 -->
+<!-- 09 <a href="http://www.12306.com" target="_blank">http://www.12306.com</a> -->
+<!-- 当鼠标放在超链上时,弹出提示文字 -->
+<!-- <a href="http://www.12306.com" title="跳转到http://www.12306.com">www.12306.com</a> -->
+<!-- 使用图片作为超链 -->
+<!-- <a href="http://www.12306.com" title="跳转到http://www.12306.com">
+	<img src="images/skill1.png" />
+</a> -->
+
+<!-- <table>标签用于显示一个表格 -->
+<!-- 属性border添加边框,属性width设置边框宽度,px表示像素 -->
+<!-- 说明:标签<table>设置的属性width是整个表格的边框宽度,是绝对宽度(即宽度不改变) -->
+<!-- 属性bgcolor设置背景色 -->
+<!-- <tr>表示行,<td>表示列,又称单元格 -->
+<!-- 说明:同一列<td>的边框宽度相等.当同一列只设置一个属性width百分比时,此width为该列边框宽度;否则,边框宽度只与该列第一行边框宽度有关 -->
+<!-- 标签<td>的属性width可以设置为百分比 -->
+<!-- 标签<td>的属性align表示水平对齐,valign表示垂直对齐 -->
+<!-- 标签<td>的属性colspan表示水平合并单元格,属性rowspan表示垂直合并单元格 -->
+<!-- 10 <html>
+	<body>
+		<table border="1" width="200px">
+			<tr>
+				<td width="50%" align="center" valign="center" colspan="2">1 2 2 2</td>
+			</tr>
+			<tr bgcolor="crimson">
+				<td align="center" rowspan="2">3 a</td>
+				<td>
+					4<br />
+					4<br />
+					4<br />
+				</td>
+			</tr>
+			<tr>
+				<td bgcolor="chartreuse">
+					b<br />
+					b<br />
+					b<br />
+				</td>
+			</tr>
+		</table>
+	</body>
+</html> -->
+
+<!-- 标签<ul>表示无序列表,标签<ol>表示有序列表 -->
+<!-- 11 <html>
+	<body>
+		<ul>
+			<li>DOTA</li>
+			<li>LOL</li>
+		</ul>
+		<ol>
+			<li>地卜师</li>
+			<li>卡尔</li>
+		</ol>
+	</body>
+</html> -->
+
+<!-- 标签<div>,<span>都是用来布局,本身没有显示效果,通常结合css进行页面布局 -->
+<!-- 标签<div>是块元素,即自动换行,其他块元素<h1>,<table>,<p>;标签<span>是内联元素,即不会换行,其他内联元素<img>,<a>,<b>,<strong> -->
+<!-- 12 <html>
+	<body>
+		<img style="margin-left: 50px;" src="images/skill1.png" /><br />
+		<img style="margin-left: 50px;" src="images/skill2.png" />
+		<div style="margin-left: 100px;">
+			<img src="images/skill3.png" /><br />
+			<img src="images/skill4.png" />
+		</div>
+		<div>
+			div1
+		</div>
+		<div>
+			div2
+		</div>
+		<span>
+			span1
+		</span>
+		<span>
+			span2
+		</span>
+	</body>
+</html> -->
+
+<!-- 标签<font>表示字体,属性color表示颜色,属性size表示大小 -->
+<!-- 属性color表示形式:颜色名和颜色对应的16进制 -->
+<!-- 13 <html>
+	<body>
+		<font color="green">绿色默认大小字体</font>
+		<br />
+		<font color="blue" size="+2">蓝色大2号字体</font>
+		<br />
+		<font color="red" size="-2">红色小2号字体</font>
+	</body>
+</html> -->
+
+<!-- 标签<iframe>表示内联框架,通过内联框架,可以实现在网页中"插入"网页 -->
+<!-- 14 <html>
+	<body>
+		<iframe src="http://www.cctv.com/" width="600px" height="400px">内联框架</iframe>
+	</body>
+</html> -->
+
+<!-- 标签<input type="text"/>表示文本框,属性size设置文本框长度,属性value设置文本框初始值,属性placeholder设置背景文字 -->
+<!-- 15 <html>
+	<body>
+		<input type="text" size="10px" value="初始值..." /><br />
+		<input type="text" size="10px" placeholder="请输入账号" />
+	</body>
+</html> -->
+
+
+<!-- <input type="password" />表示密码框 -->
+<!-- 16 <html>
+	<body>
+		<input type="password" />
+	</body>
+</html> -->
+
+
+<!-- 标签<form>用于向服务器提交数据 -->
+<!-- 属性action="/login.jsp"表示把数据提交到login.jsp这个页面上 -->
+<!-- 属性method="get"提交数据,form默认的提交方式,通过一个超链访问某个地址或在地址栏直接输入某个地址.
+	 特点:可以在浏览器的地址栏看到提交的参数,无法提交二进制数据 -->
+<!-- 属性method="post"提交数据,特点:不在地址栏显示提交的参数,但提交二进制数据,必须采用post方式 -->
+<!-- 17 <html>
+	<body>
+		<form method="post" action="http://how2j.cn/study/login.jsp">
+			账号:<input type="text" name="name" /><br />
+			密码:<input type="password" name="password" /><br />
+			<input type="submit" value="登录" />
+		</form>
+	</body>
+</html> -->
+
+<!-- <input type="radio" />表示单选框 -->
+<!-- <input type="checkbox" />表示复选框 -->
+<!-- 分组是指多个单选框都在一个分组里面 -->
+<!-- 属性name设置相同时,表示同一时间,只能选中一个单选框 -->
+<!-- 18 <html>
+	<body>
+		单选1<input type="radio" name="radio" checked="checked" />
+		单选2<input type="radio" name="radio" />
+		<p>今天晚上做什么?</p>
+		学习Java<input type="radio" name="activity" value="学习Java" /><br />
+		东京热<input type="radio" name="activity" checked="checked" value="东京热" /><br />
+		dota<input type="radio" name="activity" value="dota" /><br />
+		LOL<input type="radio" name="activity" value="LOL" /><br />
+		<p>今天晚上吃什么?</p>
+		酸菜鱼<input type="checkbox" value="酸菜鱼" /><br />
+		麻辣烫<input type="checkbox" checked="checked" name="activity" value="麻辣烫" /><br />
+		SKC<input type="checkbox" value="SKC" /><br />
+		华莱士<input type="checkbox" value="华莱士" /><br />
+	</body>
+</html> -->
+
+<!-- 标签<select>设置下拉列表,需要配合<option>使用 -->
+<!-- 属性size设置高度,属性multiple设置可以进行多选 -->
+<!-- 标签<option>的属性selected="selected"时,默认选中 -->
+<!-- 19 <html>
+	<body>
+		<select size="5" multiple="multiple">
+			<option>语文</option>
+			<option selected="selected">数学</option>
+			<option selected="selected">英语</option>
+		</select>
+	</body>
+</html> -->
+
+<!-- 标签<textarea>表示文本域,文本域可以有多行,且可以由滚动条 -->
+<!-- 属性cols设置宽度,属性rows设置行数 -->
+<!-- 20 <html>
+	<body>
+		<textarea cols="30px" rows="10">
+			abc
+			def
+			ghi
+		</textarea>
+	</body>
+</html> -->
+
+<!-- <input type="button" />表示普通按钮,不具备提交功能 -->
+<!-- <input type="submit" />表示提交按钮,用于提交form,把数据提交到服务端 -->
+<!-- <input type="reset" />表示重置按钮,可以把输入框的改动复原 -->
+<!-- 21 <html>
+	<body>
+		<input type="button" value="一个按钮" />
+		<form action="http://how2j.cn/study/login.jsp">
+			USERNAME:<input type="text" name="name" /><br />
+			PASSWORD:<input type="password" name="password" /><br />
+			<input type="submit" value="SUBMIT" />
+			<input type="reset" value="RESET" />
+		</form>
+	</body>
+</html> -->
+
+<!-- <input type="image" />表示用图像作为按钮进行form提交 -->
+<!-- 22 <html>
+	<body>
+		<form action="http://how2j.cn/study/login.jsp">
+			账号:<input type="text" name="name" /><br />
+			密码:<input type="password" name="password" /><br />
+			<input type="image" src="images/skill1.png" />
+		</form>
+	</body>
+</html> -->
+
+<!-- 标签<button>表示按钮,<button>比<input>功能更丰富,当标签<button>的type="submit"时,按钮具备提交form功能 -->
+<!-- 23 <html>
+	<body>
+		<button>按钮</button><br />
+		<button><img src="images/skill2.png" /></button><br />
+		<form action="http://how2j.cn/study/login.jsp">
+			账号:<input type="text" name="name" /><br />
+			密码:<input type="password" name="password" /><br />
+			<button type="submit">登陆</button>
+		</form>
+	</body>
+</html> -->
+
+<!-- 阶段性练习3 -->
+<!-- <html>
+	<body>
+		<table>
+			<tr>
+				<td align="right">
+					<font color="red">*</font>用户名:
+				</td>
+				<td>
+					<input type="text" name="name" />
+					<font color="red" size="3">用户名不得小于三个字符</font>
+				</td>
+			</tr><br />
+			<tr>
+				<td align="right">
+					<font color="red">*</font>密码:
+				</td>
+				<td>
+					<input type="password" name="password" />
+				</td>
+			</tr><br />
+
+			<tr>
+				<td align="right">
+					<font color="red">*</font>确认密码:
+				</td>
+				<td>
+					<input type="password" name="password" />
+				</td>
+			</tr><br />
+			<tr>
+				<td align="right">
+					<font color="red">*</font>Email:
+				</td>
+				<td>
+					<input type="text" name="name" />
+				</td>
+			</tr><br />
+			<tr>
+				<td align="right">
+					<font color="red">*</font>真实姓名:
+				</td>
+				<td>
+					<input type="text" name="name" />
+				</td>
+			</tr><br />
+			<tr>
+				<td align="right">
+					<font color="red">*</font>性别:
+				</td>
+				<td>
+					<select>
+						<option>男</option>
+						<option>女</option>
+					</select>
+				</td>
+			</tr> <br />
+			<tr>
+				<td align="right">
+					<font color="red">*</font>生日:
+				</td>
+				<td>
+					<select>
+						<option>1980</option>
+						<option>1981</option>
+						<option>1982</option>
+						<option>1983</option>
+						<option>1984</option>
+						<option>1985</option>
+						<option>1986</option>
+						<option>1987</option>
+						<option>1988</option>
+						<option>1989</option>
+					</select>
+					<select>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+						<option>11</option>
+						<option>12</option>
+					</select>
+					<select>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+						<option>11</option>
+						<option>12</option>
+						<option>13</option>
+						<option>14</option>
+						<option>15</option>
+						<option>16</option>
+						<option>17</option>
+						<option>18</option>
+						<option>19</option>
+						<option>20</option>
+						<option>21</option>
+						<option>22</option>
+						<option>23</option>
+						<option>24</option>
+						<option>25</option>
+						<option>26</option>
+						<option>27</option>
+						<option>28</option>
+						<option>29</option>
+						<option>30</option>
+					</select>
+				</td>
+			</tr> <br />
+			<tr>
+				<td align="right">
+					<font color="red">*</font>手机:
+				</td>
+				<td>
+					<input type="text" name="phone" />
+				</td>
+			</tr> <br />
+			<tr>
+				<td align="right">
+					<font color="red">*</font>居住地:
+				</td>
+				<td>
+					<select>
+						<option>四川省</option>
+						<option>福建省</option>
+						<option>河南省</option>
+						<option>山西省</option>
+						<option>山东省</option>
+						<option>陕西省</option>
+						<option>河北省</option>
+						<option>云南省</option>
+						<option>广东省</option>
+						<option>安徽省</option>
+					</select>
+					<select>
+						<option>成都市</option>
+						<option>绵竹市</option>
+						<option>广元市</option>
+						<option>巴中市</option>
+						<option>泸州市</option>
+						<option>广安市</option>
+						<option>南充市</option>
+						<option>乐山市</option>
+					</select>
+					<select>
+						<option>金平区</option>
+						<option>川汇区</option>
+						<option>自贡区</option>
+						<option>成华区</option>
+						<option>平凉区</option>
+						<option>雁塔区</option>
+						<option>赛巴区</option>
+					</select>
+					<select>
+						<option>新站乡</option>
+						<option>三圣乡</option>
+						<option>来福乡</option>
+						<option>白帝乡</option>
+						<option>东归乡</option>
+						<option>大隆乡</option>
+						<option>东来乡</option>
+					</select>
+				</td>
+			</tr> <br />
+			<tr>
+				<td align="right">
+					<font color="red">*</font>QQ:
+				</td>
+				<td>
+					<input type="text" name="qq" /><br />
+					<font color="#0099FF" size="2">设置我的QQ在线状态</font>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html> -->

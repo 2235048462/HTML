@@ -1,0 +1,1420 @@
+<!-- 01 给单元格添加背景色 -->
+<!-- 不使用CSS,需要给每一个td元素加上属性bgcolor -->
+<!-- 使用CSS,只需添加一段css代码 -->
+<!-- css是分层设计的思想,css把颜色,大小,位置等信息剥离到<style>中,而html只提供内容 -->
+<!-- 01 <html>
+	<body>
+		<table border="1">
+			<tr>
+				<td bgcolor="gray">1</td>
+				<td bgcolor="gray">2</td>
+			</tr>
+			<tr>
+				<td bgcolor="gray">3</td>
+				<td bgcolor="gray">4</td>
+			</tr>
+			<tr>
+				<td bgcolor="gray">a</td>
+				<td bgcolor="gray">b</td>
+			</tr>
+		</table>
+		<style>
+			td {
+				background-color: gray;
+			}
+		</style>
+		<table border="1">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>a</td>
+				<td>b</td>
+			</tr>
+		</table>
+	</body>
+</html> -->
+
+<!-- 02 CSS语法 -->
+<!-- css语法selector{property:value},即选择器,具有全局性.学习css就是学习有哪些选择器,哪些属性,以及哪些属性值 -->
+<!-- 可以直接在元素上添加属性style -->
+<!-- 02 <html>
+	<body>
+		<style>
+			p {
+				color: red;
+			}
+		</style>
+		<p>这是一个P</p>
+		<p>这是一个P</p>
+		<p>这是一个P</p>
+		<p>这是一个P</p>
+		<p>这是一个P</p>
+		<p style="color: red">这是style红色的</p>
+		<p>这是没有style的</p>
+	</body>
+</html> -->
+
+<!-- 03 选择器 -->
+<!-- 选择器分3种:元素选择器,id选择器,类选择器 -->
+<!-- 元素选择器通过标签名选择同一标签名的所有元素 -->
+<!-- id选择器通过设置唯一的属性id值选择对应元素,在属性id值前加#,如#p1 -->
+<!-- 类选择器用于同一标签名选择同一类的多个元素, 在类名前加.,如.pre-->
+<!-- 标签名可以与类,id结合使用,更准确选择,如p.pre或p#pix -->
+<!-- 03 <html>
+	<body>
+		<style>
+			p {
+				color: red;
+			}
+		</style>
+		<p>p元素</p>
+		<p>p元素</p>
+		<p>p元素</p>
+		<style>
+			p {
+				color: red;
+			}
+
+			#p1 {
+				color: blue;
+			}
+
+			#p2 {
+				color: green
+			}
+		</style>
+		<p id="p1">p元素</p>
+		<p id="p2">p元素</p>
+		<p>没有id的p元素</p>
+		<style>
+			.pre {
+				color: blue;
+			}
+
+			.after {
+				color: green;
+			}
+		</style>
+		<p class="pre">p元素</p>
+		<p class="after">p元素</p>
+		<p>没有类的p元素</p>
+		<style>
+			p.blue {
+				color: blue;
+			}
+		</style>
+		<p class="blue">class=blue的p元素</p>
+		<span class="blue">class=blue的span元素</span>
+	</body>
+</html> -->
+
+<!-- 04 尺寸 -->
+<!-- 尺寸属性:width,height 属性值:百分比或像素 -->
+<!-- 04 <html>
+	<body>
+		<style>
+			p#percentage {
+				width: 50%;
+				height: 50%;
+				background-color: pink;
+			}
+
+			p#pix {
+				width: 180px;
+				height: 50px;
+				background-color: green;
+			}
+		</style>
+		<p id="percentage">按比例设置尺寸50%宽,50%高</p>
+		<p id="pix">按像素设置尺寸180px宽,50px高</p>
+	</body>
+</html> -->
+
+<!-- 05 背景 -->
+<!-- 背景颜色:属性background-color,属性值的3种方式预定义的颜色名字,rgb格式以及16进制格式 -->
+<!-- 背景图片:属性background-image:url() -->
+<!-- 背景重复:属性background-repeat,属性值:repeat水平垂直方向都重复;repeat_x仅水平方向重复;repeat_y仅垂直方向重复;no-repeat无重复等 -->
+<!-- 背景平铺:属性:background-size,属性值contain -->
+<!-- <html>
+	<body>
+		<style>
+			p.gray {
+				background-color: gray;
+			}
+
+			h1 {
+				background-color: transparent;
+			}
+
+			h2 {
+				background-color: rgb(255, 0, 255);
+			}
+
+			h3 {
+				background-color: #00ff00;
+			}
+
+			div#test {
+				background-image: url(images/background.jpg);
+				width: 200px;
+				height: 100px;
+			}
+
+			div#no_repeat {
+				background-image: url(images/background_small.jpg);
+				background-repeat: no-repeat;
+				width: 200px;
+				height: 100px;
+			}
+
+			div#repeat_x {
+				background-image: url(images/background_small.jpg);
+				background-repeat: repeat-x;
+				width: 200px;
+				height: 100px;
+			}
+
+			div#contain {
+				background-image: url(images/background_small.jpg);
+				background-size: contain;
+				width: 200px;
+				height: 100px;
+			}
+		</style>
+		<p class="gray">灰色</p>
+		<h1>透明背景,默认即透明背景</h1>
+		<h2>紫色</h2>
+		<h3>绿色背景</h3>
+		<div id="test">这是一个有背景图的DIV</div>
+		<div id="no_repeat">背景不重复</div>
+		<div id="repeat_x">背景水平重复</div>
+		<div id="contain">背景平铺,通过拉伸实现,会有失真</div>
+	</body>
+</html> -->
+
+<!-- 06 文字 -->
+<!-- 文本颜色:属性color,属性值的3种方式预定义的颜色名字,rgb格式以及16进制格式 -->
+<!-- 文本对齐:属性text-align,属性值:left,right,center.div是块级元素,默认宽度100%;span看不出右对齐效果 -->
+<!-- 文本修饰:属性text-decoration,属性值overline -->
+<!-- 行间距:属性line-height,属性值:数字或百分比 -->
+<!-- 字符间距:属性letter-spacing,属性值:数字 -->
+<!-- 单词间距:属性word-spacing,属性值:数字 -->
+<!-- 首行缩进:属性text-indent,属性值:数字 -->
+<!-- 大小写:属性text-transform,属性值:uppercase全部大写;capitalize首字母大写;lowercase全部小写 -->
+<!-- 空白格:属性white-space,属性值:normal默认,多个空白格或换行符会被合并成一个空白格;pre有多少空白格,显示多少空白格,不换行;
+	 pre-wrap同pre,但会换行;nowrap一直不换行,直至使用br -->
+<!-- 06 <html>
+	<body>
+		<style>
+			div#pink {
+				color: pink;
+			}
+
+			div,
+			span {
+				border: 1px gray solid;
+				margin: 10px;
+			}
+
+			div#left {
+				text-align: left;
+			}
+
+			div#right {
+				text-align: right;
+			}
+
+			div#center {
+				text-align: center;
+			}
+
+			span#right {
+				text-align: right;
+			}
+
+			h1 {
+				text-decoration: overline;
+			}
+
+			h2 {
+				text-decoration: line-through;
+			}
+
+			h3 {
+				text-decoration: underline;
+			}
+
+			h4 {
+				text-decoration: blink;
+			}
+
+			.a {
+				text-decoration: none;
+			}
+
+			p {
+				width: 200px;
+			}
+
+			p.p {
+				line-height: 200%;
+			}
+
+			p.p1 {
+				letter-spacing: 2;
+			}
+
+			p.p2 {
+				word-spacing: 10;
+			}
+
+			p.p3 {
+				text-indent: 32;
+			}
+
+			p.uppercase {
+				text-transform: uppercase;
+			}
+
+			p.capitalize {
+				text-transform: capitalize;
+			}
+
+			p.lowercase {
+				text-transform: lowercase;
+			}
+
+			p.normal {
+				white-space: normal;
+			}
+
+			p.pre {
+				white-space: pre;
+			}
+
+			p.pre-wrap {
+				white-space: pre-wrap;
+			}
+
+			p.nowrap {
+				white-space: nowrap;
+			}
+		</style>
+		<div id="pink">粉红色</div>
+		<div id="left">左对齐</div>
+		<div id="right">右对齐</div>
+		<div id="center">居中</div>
+		<span id="right">sapn看不出右对齐效果</span>
+		<h1>上划线</h1>
+		<h2>删除效果</h2>
+		<h3>下划线</h3>
+		<h4>闪烁效果,大部分浏览器已经取消该效果</h4>
+		<a href="http://www.cctv.com">默认的超链</a>
+		<a class="a" href="http://www.cctv.com">去掉下划线的超链</a>
+		<p>
+			默认行间距
+			默认行间距
+			默认行间距
+			默认行间距
+			默认行间距
+			默认行间距
+			默认行间距
+			默认行间距
+			默认行间距
+			默认行间距
+			默认行间距
+			默认行间距
+		</p>
+		<p class="p">
+			200%行间距
+			200%行间距
+			200%行间距
+			200%行间距
+			200%行间距
+			200%行间距
+			200%行间距
+			200%行间距
+			200%行间距
+			200%行间距
+			200%行间距
+		</p>
+		<p>
+			abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg
+		</p>
+		<p class="p1">
+			abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg
+		</p>
+		<p class="p2">
+			abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg
+		</p>
+		<p>
+			没有缩进效果的一段文字没有缩进效果的一段文字没有缩进效果的一段文字没有缩进效果的一段文字
+		</p>
+		<p class="p3">
+			没有缩进效果的一段文字没有缩进效果的一段文字没有缩进效果的一段文字没有缩进效果的一段文字
+		</p>
+		<p class="uppercase">
+			abcD
+		</p>
+		<p class="capitalize">
+			abcD
+		</p>
+		<p class="lowercase">
+			abcD
+		</p>
+		<p class="normal">
+			在默认情况下，多个 空白格或者
+			换行符
+
+			会被 合并成一个空白格
+		</p>
+		<p class="pre">
+			保留所有的 空白格
+			以及换行符
+			相当于pre元素
+			特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的
+			一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字
+			特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的
+			一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字
+			特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的
+			一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字
+			特别长的一段文字
+		</p>
+		<p class="pre-wrap">
+			保留所有的 空白格
+			以及换行符
+			相当于pre元素
+			特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的
+			一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字
+			特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的
+			一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字
+			特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的
+			一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字特别长的一段文字
+			特别长的一段文字
+		</p>
+		<p class="nowrap">
+			不会换行
+			不会换行
+			不会换行
+			不会换行
+			不会换行
+			不会换行
+			直到br<br />才换行
+		</p>
+	</body>
+</html> -->
+
+
+<!-- 07 字体 -->
+<!-- 尺寸:属性font-size,属性值:数字或百分比 -->
+<!-- 风格:属性font-style,属性值:normal标准字体;italic斜体 -->
+<!-- 粗细:属性font-weight,属性值:normal标准粗细;bold粗一点 -->
+<!-- 字库:属性font-family -->
+<!-- 同时声明:把大小,风格,粗细,字库写在一行里 -->
+<!-- 07 <html>
+	<body>
+		<style>
+			p.big {
+				font-size: 30px;
+			}
+
+			p.small {
+				font-size: 75%;
+			}
+
+			p.small2 {
+				font-size: 0.75em;
+			}
+
+			p.normal1 {
+				font-style: normal;
+			}
+
+			p.italic {
+				font-style: italic;
+			}
+
+			p.normal2 {
+				font-weight: normal;
+			}
+
+			p.bold {
+				font-weight: bold;
+			}
+
+			p.default {
+				font-family: default;
+			}
+
+			p.roman {
+				font-family: "times new roman";
+			}
+
+			p.arial {
+				font-family: arial;
+			}
+
+			p.Song {
+				font-family: 宋体;
+			}
+
+			p.Black {
+				font-family: 黑体;
+			}
+
+			p.Kai {
+				font-family: 楷体;
+			}
+
+			p.BlackWire {
+				font-family: 微软雅黑;
+			}
+
+			p.all {
+				font: italic bold 30px "times new roman";
+			}
+		</style>
+		<p>正常大小</p>
+		<p class="big">30px大小的文字</p>
+		<p class="small">50%比例的文字</p>
+		<p class="small2">0.5em等同于50%比例的文字</p>
+		<p>标准字体</p>
+		<p class="normal1">标准字体</p>
+		<p class="italic">斜体</p>
+		<p>标准字体</p>
+		<p class="normal2">标准字体</p>
+		<p class="bold">粗一点</p>
+		<p class="default">默认字库 font family:default</p>
+		<p class="roman">设置字库 font-family: Times New Roman</p>
+		<p class="arial">设置字库 font-family: Arial</p>
+		<p class="Song">设置字库 font-family: 宋体, 这种字体是IE默认字体</p>
+		<p class="Black">设置字库 font-family: 黑体</p>
+		<p class="Kai">设置字库 font-family: 楷体</p>
+		<p class="BlackWire">设置字库 font-family: 微软雅黑, 这个字体是火狐默认字体</p>
+		<p>默认字体</p>
+		<p class="all">斜体的 粗体的 大小是30px的 "Times New Roman"</p>
+	</body>
+</html> -->
+
+<!-- 08 鼠标样式 -->
+<!-- 属性cursor -->
+<!-- 08 <html>
+	<body>
+		<style>
+			span {
+				cursor: wait;
+			}
+		</style>
+		<span>鼠标移动到这段文字上，就看到鼠标样式变成了十字架</span>
+	</body>
+</html> -->
+
+<!-- 09 表格 -->
+<!-- 表格布局:属性table-layout,属性值:automatic单元格的大小由td内容宽度决定;fixed单元格的大小由td上设置的宽度决定.
+	 只对连续英文字母起作用,中文看不到效果 -->
+<!-- 表格边框:属性border-collapse,属性值:separate边框分隔;collapse边框合并 -->
+<!-- 09 <html>
+	<body>
+		<style>
+			table.t1 {
+				table-layout: auto;
+			}
+
+			table.t2 {
+				table-layout: fixed;
+			}
+
+			table.t3 {
+				border-collapse: separate;
+			}
+
+			table.t4 {
+				border-collapse: collapse;
+			}
+		</style>
+		<table class="t1" border="1" width="100%">
+			<tr>
+				<td width="10%">abcdefghijklmnopqrstuvwxyz</td>
+				<td width="90%">abc</td>
+			</tr>
+		</table>
+		<table class="t2" border="1" width="100%">
+			<tr>
+				<td width="50px">abcdefghijklmnopqrstuvwxyz</td>
+				<td>abc</td>
+			</tr>
+		</table><br />
+		<table class="t3" border="1" width="200px">
+			<tr>
+				<td width="50%">边框分离</td>
+				<td width="50%">边框分离</td>
+			</tr>
+		</table><br />
+		<table class="t4" border="1" width="200px">
+			<tr>
+				<td width="50%">边框合并</td>
+				<td width="50%">边框合并</td>
+			</tr>
+		</table>
+	</body>
+</html> -->
+
+<!-- 10 边框 -->
+<!-- 边框风格:属性border-style,属性值:solid实线;dotted点状;dashed虚线;double双线 -->
+<!-- 边框颜色:属性border-color,属性值3种形式 -->
+<!-- 边框宽度:属性border-width,属性值:数字 -->
+<!-- 同时声明:属性border,属性值:颜色,风格,宽度等 -->
+<!-- 通过制定位置,可以只给一个方向设置边框风格,颜色和宽度,如border-top-style:solid -->
+<!-- 当有交界的边同时出现边框时,会以斜线的形式表现交界线 -->
+<!-- 10 <html>
+	<body>
+		<style>
+			div.solid {
+				border-style: solid;
+			}
+
+			div.dotted {
+				border-style: dotted;
+			}
+
+			div.dashed {
+				border-style: dashed;
+			}
+
+			div.double {
+				border-style: double;
+			}
+
+			div.red {
+				border-style: solid;
+				border-color: red;
+			}
+
+			div.red1 {
+				border-style: solid;
+				border-color: red;
+				border-width: 1px;
+			}
+
+			div.default {
+				border-style: solid;
+				border-color: red;
+			}
+
+			div.blue {
+				border: 1px dotted lightskyblue;
+			}
+
+			div.top {
+				width: 150px;
+				height: 150px;
+				border-top-style: solid;
+				border-top-color: red;
+				border-top-width: 50px;
+				background-color: lightgray;
+			}
+
+			div.lefttop {
+				width: 150px;
+				height: 150px;
+				border-top-style: solid;
+				border-top-color: red;
+				border-top-width: 50px;
+				border-left-style: solid;
+				border-left-color: blue;
+				border-left-width: 50px;
+				background-color: lightgray;
+			}
+
+			div.alldirection {
+				width: 150px;
+				height: 150px;
+				border-top-style: solid;
+				border-top-color: red;
+				border-top-width: 50px;
+				border-left-style: solid;
+				border-left-color: blue;
+				border-left-width: 50px;
+				border-bottom-style: solid;
+				border-bottom-color: green;
+				border-bottom-width: 50px;
+				border-right-style: solid;
+				border-right-color: yellow;
+				border-right-width: 50px;
+				background-color: lightgray;
+			}
+
+			/* 没有表格table的设置,tr无法显示效果 */
+			table.table1 {
+				border-collapse: collapse;
+			}
+
+			td {
+				width: 25%;
+				text-align: center;
+			}
+
+			tr {
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: lightgray;
+				height: 35px;
+			}
+
+			tr.head {
+				border-bottom-width: 2px;
+			}
+
+			tr.odd {
+				background-color: #f0f0f0;
+			}
+
+			div.San {
+				width: 0px;
+				border-top-style: solid;
+				border-top-color: red;
+				border-top-width: 10px;
+				border-left-style: solid;
+				border-left-color: white;
+				border-left-width: 10px;
+				border-right-style: solid;
+				border-right-color: white;
+				border-right-width: 10px;
+			}
+
+			table.table2 {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			td {
+				text-align: center;
+			}
+
+			tr.rowborder td {
+				background-color: #b2d1ff;
+				border-right: 2px solid red;
+				height: 3px;
+			}
+		</style>
+		<div>默认无边框div</div><br />
+		<div class="solid">实线边框</div><br />
+		<div class="dotted">点状边框</div><br />
+		<div class="dashed">虚线边框</div><br />
+		<div class="double">双线边框</div><br />
+		<div class="red">实线红色边框</div><br />
+		<div class="red1">实线红色细边框</div><br />
+		<div class="default">实线红色默认宽度边框</div><br />
+		<div class="blue">点状天蓝色细边框</div><br />
+		<div class="top">只有上面有边框</div><br />
+		<div class="lefttop">左边和上边都有边框</div><br />
+		<div class="alldirection">四边都有边框</div><br />
+		<table class="table1" width="100%">
+			<tr class="head">
+				<td>id</td>
+				<td>名称</td>
+				<td>血量</td>
+				<td>伤害</td>
+			</tr>
+			<tr class="odd">
+				<td>1</td>
+				<td>gareen</td>
+				<td>340</td>
+				<td>58</td>
+			</tr>
+			<tr class="even">
+				<td>2</td>
+				<td>teemo</td>
+				<td>320</td>
+				<td>76</td>
+			</tr>
+			<tr class="odd">
+				<td>3</td>
+				<td>annie</td>
+				<td>380</td>
+				<td>38</td>
+			</tr>
+			<tr class="even">
+				<td>4</td>
+				<td>deadbrother</td>
+				<td>400</td>
+				<td>90</td>
+			</tr>
+		</table><br />
+		<div class="San">美人尖</div>
+		<table class="table2">
+			<tr>
+				<td>商品</td>
+				<td>数量</td>
+				<td>价格</td>
+				<td>小记</td>
+			</tr>
+			<tr class="rowborder">
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html> -->
+
+<!-- 11 内边距 -->
+<!-- 元素内边距指元素里的内容与边框之间的距离,属性:padding-left左内边距;padding-right右内边距;
+	 padding-top上内边距;padding-bottom下内边距;padding上右下左,属性值:数字 -->
+<!-- 属性padding,属性值:只有一个数字,即四个方向的值;有四个数字,即四个方向的值,上右下左依顺时针方向依次赋值 -->
+<!-- 11 <html>
+	<body>
+		<style>
+			span.red {
+				border: 5px solid red;
+				background-color: green;
+			}
+
+			span.pad-left {
+				border: 5px solid red;
+				background-color: green;
+				padding-left: 50px;
+			}
+
+			span.pad-left-one {
+				border: 5px solid red;
+				background-color: green;
+				padding: 20px;
+			}
+
+			span.pad-left-four {
+				border: 5px solid red;
+				background-color: green;
+				padding: 10 20 30 40;
+			}
+		</style>
+		<span class="red">
+			无内边距的span
+		</span><br /><br />
+		<span class="pad-left">
+			左边距为50的span
+		</span><br /><br /><br /><br />
+		<span class="pad-left-one">
+			padding:20的span
+		</span><br /><br /><br /><br />
+		<span class="pad-left-four">
+			padding:10 20 30 40 的span
+		</span><br /><br /><br /><br />
+	</body>
+</html> -->
+
+<!-- 12 外边距 -->
+<!-- 元素外边距指元素边框与元素边框之间的距离,属性:margin-left左外边距,margin-right右外边距,
+	 margin-top上外边距,margin-bottom下外边距,属性值:数字 -->
+<!-- span等内联元素,默认情况下只有左右外边距,没有上下外边距.观察上下外边距的效果,可以采用块级元素 -->
+<!-- 12 <html>
+	<body>
+		<style>
+			span {
+				border: 1px solid red;
+				background-color: green;
+			}
+
+			span.span {
+				margin-left: 20px;
+				margin-top: 20px;
+			}
+		</style>
+		<span>无外边距的span</span>
+		<span>无外边距的span</span>
+		<br />
+		<span>无外边距的span</span>
+		<span class="span">有左边距的span</span>
+	</body>
+</html> -->
+
+<!-- 13 边框模型 -->
+<!-- 13 <html>
+	<body>
+		<style>
+			div.box {
+				width: 70px;
+				padding: 5px;
+				margin: 10px;
+			}
+
+			div {
+				border: 1px solid gray;
+				font-size: 70%;
+			}
+		</style>
+		<div>
+			其他元素
+		</div>
+		<div class="box">
+			内容宽度70px<br /><br />
+			内边距：5px<br /><br />
+			外边距：10px<br />
+		</div>
+		<div>
+			其他元素
+		</div>
+	</body>
+</html> -->
+
+<!-- 14 超链状态 -->
+<!-- 超链状态:link初始状态,从未被访问过,visited已访问过,hover鼠标悬停于超链的上方,active鼠标左键点击下去,但是尚未弹起时 -->
+<!-- 伪类,指被选中的元素处于某种状态的时候 -->
+<!-- 使用text-decoration:none去除超链下划线 -->
+<!-- 14 <html>
+	<body>
+		<style>
+			a.a1:link {
+				color: red
+			}
+
+			a.a1:visited {
+				color: green
+			}
+
+			a.a1:hover {
+				color: blue
+			}
+
+			a.a1:active {
+				color: yellow
+			}
+
+			a.no_underline {
+				text-decoration: none;
+			}
+		</style>
+		<a class="a1" href="http://www.cctv.com">超链的不同状态</a><br />
+		<a href="http://www.12306.com">默认的超链</a><br />
+		<a class="no_underline" href="http://www.baidu.com">去除下划线的超链</a>
+	</body>
+</html> -->
+
+<!-- 15 隐藏 -->
+<!-- 隐藏元素方式:display:none;visibility:hidden -->
+<!-- display:none隐藏一个元素,这个元素将不再占有原空间,visibility:hidden隐藏一个元素,这个元素继续占有原空间,只是看不见 -->
+<!-- 15 <html>
+	<body>
+		<style>
+			div.none {
+				display: none;
+			}
+
+			div.hidden {
+				visibility: hidden;
+			}
+		</style>
+		<div>可见的div1</div>
+		<div class="none">隐藏的div2,使用display:none隐藏</div>
+		<div>可见的div3</div>
+		<div class="hidden">隐藏的div4,使用visibility:hidden隐藏</div>
+		<div>可见的div5</div>
+	</body>
+</html> -->
+
+<!-- 16 css文件 -->
+<!-- 16 <html>
+	<body>
+		<style>
+			/* p.red {
+				color: red;
+			}
+
+			span.span {
+				color: blue;
+			} */
+		</style>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<p class="red">红色</p>
+		<span class="span">蓝色</span>
+	</body>
+</html> -->
+
+<!-- 17 优先级 -->
+<!-- 优先使用最后出现的设置 -->
+<!-- 标签<style>与style属性冲突时,优先使用style属性 -->
+<!-- 增加!important则优先级高于style属性 -->
+<!-- 17 <html>
+	<body>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<style>
+			p.red {
+				color: green;
+			}
+
+			p.p {
+				color: orange !important;
+			}
+		</style>
+		<p class="red">p1颜色是绿色,优先使用靠的最后出现的</p>
+		<p class="red" style="color: red;">p1颜色是红色,优先使用style属性</p>
+		<p class="p" style="color: blue;">p1颜色是橙色,优先使用!important样式</p>
+	</body>
+</html> -->
+
+<!-- 18 绝对定位 -->
+<!-- 绝对定位属性position,属性值absolute,通过指定left,top绝对定位一个元素 -->
+<!-- 设置了绝对定位的元素,相当于该元素被从原文档中删除,而不会留下空档 -->
+<!-- 绝对定位是相对于最近一个定位了的父容器再进行定位,如果父容器未定位,则最近一个定位的父容器通常是<body> -->
+<!-- 属性z-index,属性值越大,表示放上面;属性值越小,表示放下面 -->
+<!-- 18 <html>
+	<body>
+		<style>
+			p.abs {
+				position: absolute;
+				left: 100px;
+				top: 50px;
+			}
+
+			div.absdiv {
+				position: absolute;
+				left: 150px;
+				top: 50px;
+				width: 215px;
+				border: 1px solid blue;
+			}
+
+			img#img1 {
+				position: absolute;
+				left: 60px;
+				top: 20px;
+				z-index: 2;
+			}
+
+			img#img2 {
+				position: absolute;
+				left: 60px;
+				top: 120px;
+				z-index: 1;
+			}
+		</style>
+		<p>正常文字1</p>
+		<p>正常文字2</p>
+		<p class="abs">绝对定位的文字3</p>
+		<p>正常文字4</p>
+		<p>正常文字5</p>
+		<div>
+			<p>正常文字a</p>
+			<p>正常文字b</p>
+			<p>正常文字c</p>
+			<p>正常文字d</p>
+			<p>正常文字e</p>
+			<p>正常文字f</p>
+			<p>正常文字g</p>
+		</div>
+		<div class="absdiv">
+			这是一个定位了的div
+			<p class="abs">绝对定位的文字</p>
+		</div>
+		<div>
+			<p>正常文字a</p>
+			<p>正常文字b</p>
+			<p>正常文字c</p>
+			<p>正常文字d</p>
+			<p>正常文字e</p>
+			<p>正常文字f</p>
+			<p>正常文字g</p>
+		</div>
+		<img id="img1" src="images/skill1.png" />
+		<img id="img2" src="images/skill2.png" />
+	</body>
+</html> -->
+
+<!-- 19 相对定位 -->
+<!-- 相对定位属性position,属性值relative -->
+<!-- 相对定位不会把该元素从原文档删除掉,而是在原文档的位置基础上,移动一定的距离 -->
+<!-- 19 <html>
+	<body>
+		<style>
+			p.rel {
+				position: relative;
+				left: 150px;
+				top: 50px;
+			}
+
+			div.rel {
+				position: relative;
+				left: 0px;
+				top: 0px;
+			}
+
+			div.abs {
+				position: absolute;
+				left: 150px;
+				top: 50px;
+			}
+		</style>
+		<p>正常文字1</p>
+		<p>正常文字2</p>
+		<p class="rel">相对定位的文字3</p>
+		<p>正常文字4</p>
+		<p>正常文字5</p>
+		<p>正常文字1</p>
+		<p>正常文字2</p>
+		<div class="rel"></div>
+		<div class="abs">相对定位的文字3(不占坑)</div>
+		<p>正常文字4</p>
+		<p>正常文字5</p>
+	</body>
+</html> -->
+
+<!-- 20 浮动 -->
+<!-- 浮动的框可以向左或向右移动,直到它的外边缘碰到包含框或另一个浮动框的边框为止 -->
+<!-- 浮动属性float,属性值left,right -->
+<!-- 文字向右浮动,浮动后原来的"坑"就让出来了,并且在原有高度的基础上,向右浮动 -->
+<!-- 文字向左浮动与向右浮动同,但向左浮动的文字本身并未离开原位置 -->
+<!-- 不允许出现浮动元素属性clear,属性值left right both none -->
+<!-- 20 <html>
+	<body>
+		<style>
+			div.right {
+				float: right;
+			}
+
+			div.left {
+				float: left;
+			}
+
+			div.div1,
+			div.div2,
+			div.div3 {
+				width: 320px;
+			}
+
+			img#img2,
+			img#img3 {
+				float: left;
+			}
+
+			p.clearp {
+				clear: left;
+			}
+
+			div#floatingDiv {
+				width: 200px;
+			}
+
+			div#floatingDiv div {
+				float: left;
+			}
+		</style>
+		<div>正常文字1</div>
+		<div>正常文字2</div>
+		<div class="right">浮动的文字3</div>
+		<div>正常文字4</div>
+		<div>正常文字5</div>
+		<div>正常文字a</div>
+		<div>正常文字b</div>
+		<div class="left">浮动的文字c</div>
+		<div>正常文字d</div>
+		<div>正常文字e</div>
+		<div class="div1">
+			<img id="img1" src="images/skill3.png" />
+			<p>
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+			</p>
+		</div>
+		<div class="div2">
+			<img id="img2" src="images/skill3.png" />
+			<p>
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+			</p>
+		</div>
+		<div class="div3">
+			<img id="img3" src="images/skill3.png" />
+			<p class="clearp">
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+				当图片不浮动时，文字就会换行出现在下面
+			</p>
+		</div>
+		<div>默认的div排列是会换行的</div>
+		<div>菜单1</div>
+		<div>菜单2</div>
+		<div>菜单3</div>
+		<div>如果使用float就可以达到水平排列的效果,通常会用在菜单,导航栏等地方,如果超出了父容器,还会自动换行</div>
+		<div id="floatingDiv">
+			<div>菜单1</div>
+			<div>菜单2</div>
+			<div>菜单3</div>
+			<div>菜单4</div>
+			<div>菜单5</div>
+			<div>菜单6</div>
+		</div>
+	</body>
+</html> -->
+
+<!-- 21 显示方式 -->
+<!-- 显示方式元素display有多种:隐藏,块级,内联,内联-块级 -->
+<!-- display:block表示块级元素,块级元素会自动在前面和后面加换行,并且设置的width和height能够生效 -->
+<!-- div默认块级元素,span默认内联元素(不换行,且width和height不生效) -->
+<!-- display:inline表示内联元素,内联元素前后没有换行,并且设置的width和height无效,大小由内容决定 -->
+<!-- display:inline-block表示内联-块级元素 -->
+<!-- list-item显示列表,table显示表格,inline-table显示无换行表格,table-cell显示单元格 -->
+<!-- 21 <html>
+	<body>
+		<style>
+			div.none {
+				display: none;
+			}
+
+			div#div1,
+			div#div2,
+			span#span1 span,
+			span#span2,
+			span#span3 span {
+				border: 1px solid lightgray;
+				margin: 10px;
+				width: 200px;
+				height: 100px;
+			}
+
+			span#span2 {
+				display: block;
+			}
+
+			div#div2 {
+				display: inline;
+			}
+
+			span#span4 span {
+				display: inline-block;
+				border: 1px solid lightgray;
+				margin: 10px;
+				width: 100px;
+			}
+		</style>
+		<div>可见的div1</div>
+		<div class="none">隐藏的div2,使用diaplay:none隐藏</div>
+		<div>可见的div3</div>
+		<div id="div1">普通的div块</div>
+		<span id="span1">
+			<span>这是普通的span</span>
+			<span>这是普通的span</span>
+			<span>这是普通的span</span>
+		</span><br /><br />
+		<span id="span2">这是span,被改造成块级元素</span>
+		<span id="span3">
+			<span>这是普通的span</span>
+			<span>这是普通的span</span>
+			<span>这是普通的span</span>
+		</span><br /><br />
+		<div id="div2">
+			这是div,被改造成了内联元素
+		</div><br /><br />
+		<span id="span4">
+			<span>盖伦</span>
+			<span>蒙多医生</span>
+			<span>奈德丽</span>
+			<span>蒸汽机器人</span>
+		</span>
+	</body>
+</html> -->
+
+<!-- 22 水平居中 -->
+<!-- 22 <html>
+	<body>
+		<style>
+			div {
+				border: 1px solid lightgray;
+				margin: 10px;
+			}
+
+			span {
+				border: 1px solid lightskyblue;
+			}
+		</style>
+		<div id="div1" align="center">
+			通过设置属性align="center" 居中的内容
+		</div>
+		<div id="div2" style="text-align: center">
+			通过样式style="text-align:center" 居中的内容
+		</div>
+		<div>
+			默认情况下div会占用100%的宽度,所以无法观察元素是否居中
+		</div>
+		<div id="div3" style="width:300px;margin: 0 auto;">
+			设置本div的宽度，然后再使用样式 margin: 0 auto来使得元素居中
+		</div>
+		<span style="width: 300px;margin: 0 auto;">
+			span 是内联元素，无法设置宽度，所以不能通过margin:0 auto居中
+		</span>
+		<div style="text-align: center;">
+			<span id="span1">
+				span的居中可以通过放置在div中，然后让div text-align实现居中
+			</span>
+		</div>
+
+	</body>
+</html> -->
+
+<!-- 23 左侧固定 -->
+<!-- 23 <html>
+	<body>
+		<style>
+			div#left {
+				width: 200px;
+				float: left;
+				background-color: pink;
+			}
+
+			div#right {
+				overflow: hidden;
+				background-color: lightskyblue;
+			}
+		</style>
+		<div id="left">左侧固定宽度</div>
+		<div id="right">右侧自动填满</div>
+	</body>
+</html> -->
+
+<!-- 24 垂直居中 -->
+<!-- line-height适合单独一行垂直居中,但不能对图片居中 -->
+<!-- 设置相同的上下内边距,实现垂直居中效果 -->
+<!-- 通过display:table-cell把div用单元格形式显示,然后借用单元格的垂直居中vertical-align:middle达到效果 -->
+<!-- 24 <html>
+	<body>
+		<style>
+			div {
+				border: 1px solid lightskyblue;
+			}
+
+			div#div1 {
+				line-height: 100px;
+			}
+
+			div#div2 {
+				padding: 30px 0px;
+			}
+
+			div#div3 {
+				display: table-cell;
+				vertical-align: middle;
+				height: 200px;
+			}
+		</style>
+		<div id="div1">line-height适合单独一行垂直居中</div>
+		<div id="div2">
+			多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容
+			多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容
+			多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容
+			多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容
+			多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容 多行内容
+		</div>
+		<div id="div3">
+			<img src="images/skill3.png" />
+		</div>
+	</body>
+</html> -->
+
+<!-- 25 左右固定 -->
+<!-- 25 <html>
+	<body>
+		<style>
+			div.div1 {
+				width: 200px;
+				float: left;
+				background-color: pink;
+			}
+
+			div.div3 {
+				width: 200px;
+				float: right;
+				background-color: pink;
+			}
+
+			div.div2 {
+				margin: 0 200px;
+				background-color: lightblue;
+			}
+		</style>
+		<div class="div1">
+			左边固定宽度
+		</div>
+		<div class="div2">
+			中间自适应
+		</div>
+		<div class="div3">
+			左边固定宽度
+		</div>
+	</body>
+</html> -->
+
+<!-- 26 贴在下方 -->
+<!-- bottom:0表示贴在下面 -->
+<!-- 26 <html>
+	<body>
+		<style>
+			div#div1 {
+				position: relative;
+				width: 90%;
+				height: 300px;
+				background-color: skyblue;
+			}
+
+			div#div2 {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 30px;
+				background-color: lightgreen;
+			}
+		</style>
+		<div id="div1">
+			相对定位
+			<div id="div2">无论蓝色div高度如何变化，绿色div都会贴在下面</div>
+		</div>
+
+	</body>
+</html> -->
+
+<!-- 27 块之间的空格 -->
+<!-- 27 <html>
+	<body>
+		<style>
+			span {
+				border-bottom: 2px solid lightgray;
+			}
+
+			div#nocontinue1 span {
+				border-bottom: 2px solid lightgray;
+				float: left;
+			}
+		</style>
+		<div id="continue">
+			<span>连续的span</span><span>连续的span</span><span>连续的span</span><span>连续的span</span>
+		</div>
+		<div id="nocontinue">
+			<span>有换行的span</span>
+			<span>有换行的span</span>
+			<span>有换行的span</span>
+		</div>
+		<div id="nocontinue1">
+			<span>有换行的span</span>
+			<span>有换行的span</span>
+			<span>有换行的span</span>
+		</div>
+		<div style="clear: both;"></div>
+		<div>后续的内容</div>
+	</body>
+</html> -->
